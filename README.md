@@ -34,6 +34,7 @@ This project is a Retrieval-Augmented Generation (RAG) application that allows u
 - **Docker** - Containerization
 
 ## Project Structure
+```plaintext
 ├── client/                 # Frontend Next.js application
 │   ├── app/                # Next.js app directory
 │   │   ├── components/     # React components
@@ -50,6 +51,7 @@ This project is a Retrieval-Augmented Generation (RAG) application that allows u
     ├── index.js            # Express server setup and API endpoints
     ├── worker.js           # BullMQ worker for processing PDF files
     └── uploads/            # Directory for uploaded PDF files
+```
 
 ## Prerequisites
 
