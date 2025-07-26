@@ -5,6 +5,8 @@ import { Queue } from "bullmq";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { QdrantVectorStore } from "@langchain/qdrant";
 import OpenAI from "openai";
+import dotenv from 'dotenv';
+dotenv.config();
 
 // ===================================================
 // ===================================================
