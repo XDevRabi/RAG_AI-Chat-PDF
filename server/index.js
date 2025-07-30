@@ -100,7 +100,10 @@ app.get("/chat", async (req, res) => {
     // import { HuggingFaceInferenceEmbeddings } from "@langchain/community/embeddings/hf";
     // const embeddings = new HuggingFaceInferenceEmbeddings({
     //   apiKey: process.env.HUGGINGFACE_API_KEY,
-    //   model: "sentence-transformers/all-MiniLM-L6-v2",
+    //   model: "sentence-transformers/all-MiniLM-L6-v2", // Fast and good quality
+    // Alternative embedding models:
+    // model: "sentence-transformers/all-mpnet-base-v2", // Higher quality, slower
+    // model: "BAAI/bge-small-en-v1.5", // Very good performance
     // });
 
     // But for now we will use Gemini
