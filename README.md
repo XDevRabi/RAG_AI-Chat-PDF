@@ -24,7 +24,7 @@ This project is a Retrieval-Augmented Generation (RAG) application that allows u
 ### Backend
 - **Node.js with Express** - Web server framework
 - **LangChain** - Document processing and AI orchestration
-- **OpenAI API** - Embeddings and chat completions
+- **Google Generative AI API** - Embeddings and chat completions
 - **BullMQ** - Job queue management
 - **PDF-Parse** - PDF text extraction
 
@@ -57,7 +57,7 @@ This project is a Retrieval-Augmented Generation (RAG) application that allows u
 
 - **Node.js** (latest LTS version)
 - **Docker and Docker Compose**
-- **OpenAI API key**
+- **Google Generative AI API key** - Sign up at [Google Cloud](https://cloud.google.com/) and create a project to get your API key.
 
 ## Installation & Setup
 
@@ -92,9 +92,9 @@ cd server
 npm install
 ```
 
-3. Set your OpenAI API key as an environment variable:
+3. Set your Google Generative AI API key as an environment variable:
 ```bash
-set OPENAI_API_KEY=your_openai_api_key_here
+set GOOGLE_API_KEY=your_google_api_key_here
 ```
 
 4. Start the Express server:
@@ -144,7 +144,7 @@ npm run dev
 2. **Queue**: Upload jobs are added to BullMQ queue for background processing
 3. **Extract**: Worker process extracts text content from PDF using LangChain PDFLoader
 4. **Chunk**: Text is split into manageable chunks for better retrieval
-5. **Embed**: Each chunk is converted to vector embeddings using OpenAI's `text-embedding-3-small`
+5. **Embed**: Each chunk is converted to vector embeddings using Google Generative AI's `text-embedding-004`
 6. **Store**: Embeddings are stored in Qdrant vector database
 
 ### Query Processing
@@ -152,7 +152,7 @@ npm run dev
 1. **User Query**: User submits a question through the chat interface
 2. **Embed Query**: Question is converted to vector embedding
 3. **Retrieve**: Similar document chunks are retrieved from Qdrant (top 2 results)
-4. **Generate**: Retrieved context + user question sent to OpenAI GPT-4
+4. **Generate**: Retrieved context + user question sent to Google Generative AI's `gemini-1.5-flash` model
 5. **Response**: AI-generated answer returned to user with source documents
 
 ## API Endpoints
@@ -169,7 +169,7 @@ npm run dev
 ## Environment Variables
 
 ```bash
-OPENAI_API_KEY=your_openai_api_key_here
+GOOGLE_API_KEY=your_google_api_key_here
 ```
 
 ## Development Scripts
@@ -191,7 +191,7 @@ npm run start # Start production server
 
 ### Common Issues
 
-1. **OpenAI API Key**: Ensure your API key is set correctly
+1. **Google Generative AI API Key**: Ensure your API key is set correctly
 2. **Docker Services**: Verify Qdrant and Valkey are running with `docker-compose ps`
 3. **Port Conflicts**: Check if ports 3000, 6333, 6379, 8000 are available
 4. **Large PDFs**: Processing time increases with document size
